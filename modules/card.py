@@ -10,7 +10,8 @@ import random
 """
 """
 Power Numbers
-20 is a wild card that switches the shape, 14 means general market (everyone pick 1 card),
+20 is a wild card that switches the shape,
+14 means general market (everyone pick 1 card),
 8 means skip the next person,
 5 means for the next person to pick up 3 cards (unless you can defend by playing a 5),
 2 means the next person picks up 2 cards, and
@@ -20,57 +21,57 @@ Power Numbers
 
 class Circle:
     def __init__(self):
-        self.cards = self.__setup_circles()
+        self.cards = self.__setup_card()
 
     @staticmethod
-    def __setup_circles():
+    def __setup_card():
         return [f"Circle {card_num}" for card_num in range(1, 15) if card_num != 6 and card_num != 9]
 
 
 class Cross:
     def __init__(self):
-        self.cards = self.__setup_cross()
+        self.cards = self.__setup_card()
 
     @staticmethod
-    def __setup_cross():
+    def __setup_card():
         return [f"Cross {card_num}" for card_num in range(1, 15) if card_num != 4 and card_num != 6 and card_num != 8
                 and card_num != 9 and card_num != 12]
 
 
 class Square:
     def __init__(self):
-        self.cards = self.__setup_squares()
+        self.cards = self.__setup_card()
 
     @staticmethod
-    def __setup_squares():
+    def __setup_card():
         return [f"Square {card_num}" for card_num in range(1, 15) if card_num != 4 and card_num != 6 and card_num != 8
                 and card_num != 9 and card_num != 12]
 
 
 class Star:
     def __init__(self):
-        self.cards = self.__setup_stars()
+        self.cards = self.__setup_card()
 
     @staticmethod
-    def __setup_stars():
+    def __setup_card():
         return [f"Star {card_num}" for card_num in range(1, 9) if card_num != 6]
 
 
 class Triangle:
     def __init__(self):
-        self.cards = self.__setup_triangles()
+        self.cards = self.__setup_card()
 
     @staticmethod
-    def __setup_triangles():
+    def __setup_card():
         return [f"Triangle {card_num}" for card_num in range(1, 15) if card_num != 6 and card_num != 9]
 
 
 class Whot:
     def __init__(self):
-        self.cards = self.__setup_whots()
+        self.cards = self.__setup_card()
 
     @staticmethod
-    def __setup_whots():
+    def __setup_card():
         return ["Whot 20" for _ in range(5)]
 
 
@@ -96,6 +97,6 @@ class Card:
     @staticmethod
     def is_power_card(card):
         card = card.split()[1]
-        if (card == "1") or (card == "4") or (card == "7") or (card == "8") or (card == "20"):
+        if (card == "1") or (card == "2") or (card == "5") or (card == "8") or (card == "14") or (card == "20"):
             return True
         return False
